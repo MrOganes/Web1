@@ -3,7 +3,6 @@
 body {
    margin: 0;
    padding: 0;
-   background-image: url(gradients_app.png);
    display: flex;
    justify-content: center;
    font-family: 'Montserrat';
