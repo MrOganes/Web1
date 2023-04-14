@@ -23,33 +23,6 @@ function Test_email($data){
   }
 }
 
-function Test_gender($data){
-  if($data=="Мужской" || $data="Женский"){
-    return 1;
-  }
-  else{
-    return 0;
-  }
-}
-
-function Test_limbs($data){
-  if($data="2" || $data="4" || $data="6"){
-    return 1;
-  }
-  else{
-    return 0;
-  }
-}
-
-function Test_superpowers($data){
-  foreach($data as $cout){
-    if($cout!="бессмертие" && $cout!="прохождение сквозь стены" && $cout!="левитация"){
-      return 0;
-    }
-  }
-  return 1;
-}
-
 function Test_biography($data){
   $pattern = '/^[a-zA-Zа-яА-Я\s.,!?-]{1,255}$/u';
   if(preg_match($pattern, $data)){
