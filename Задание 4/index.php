@@ -24,7 +24,7 @@ function Test_email($data){
 }
 
 function Test_biography($data){
-  $pattern = '/^[a-zA-Zа-яА-Я\s.,!?-]{1,255}$/u';
+  $pattern = '/^[a-zA-Zа-яА-Я0-9,. \'"-]*$/u';
   if(preg_match($pattern, $data)){
     return 1;
   }
