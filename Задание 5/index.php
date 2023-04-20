@@ -82,15 +82,16 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     if(isset($_COOKIE["ok"])){
       setcookie("levitation", "", 1000000);
     }
+
     
-    foreach($result_super[0] as $cout){
-      if($cout =="1"){
+    foreach($result_super as $cout){
+      if($cout['id_superpower'] =="1"){
         setcookie("immortality","yes");
       }
-      if($cout =="2"){
+      if($cout['id_superpower'] =="2"){
         setcookie("passing_through_walls","yes");
       }
-      if($cout =="3"){
+      if($cout['id_superpower'] =="3"){
         setcookie("levitation","yes");
       }
     }
