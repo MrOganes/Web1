@@ -73,24 +73,25 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $sth2->execute(['id'=>"$id"]);
     $result_super = $sth2->fetchAll();
 
+    if(isset($_COOKIE["immortality"])){
+      setcookie("immortality", "", 1000000);
+    }
+    if(isset($_COOKIE["passing_through_walls"])){
+      setcookie("passing_through_walls", "", 1000000);
+    }
+    if(isset($_COOKIE["ok"])){
+      setcookie("levitation", "", 1000000);
+    }
+    
     foreach($result_super[0] as $cout){
       if($cout =="1"){
         setcookie("immortality","yes");
       }
-      else {
-        setcookie("immortality", "",1000000);
-      }
       if($cout =="2"){
         setcookie("passing_through_walls","yes");
       }
-      else {
-        setcookie("passing_through_walls","",1000000);
-      }
       if($cout =="3"){
         setcookie("levitation","yes");
-      }
-      else{
-        setcookie("levitation","yes", 1000000);
       }
     }
 
