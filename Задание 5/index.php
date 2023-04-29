@@ -83,7 +83,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $result_super = $sth2->fetchAll();
 
     foreach($result_super as $cout){
-      print($cout['id_superpower']);
       if($cout['id_superpower'] =="1"){
         setcookie("immortality","yes");
       }
