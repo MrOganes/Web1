@@ -52,6 +52,15 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     if(isset($_COOKIE["ok"])){
       setcookie("ok", "", 1000000);
     }
+    if(isset($_COOKIE["immortality"])){
+      setcookie("immortality", "", 1000000);
+    }
+    if(isset($_COOKIE["passing_through_walls"])){
+      setcookie("passing_through_walls", "", 1000000);
+    }
+    if(isset($_COOKIE["levitation"])){
+      setcookie("levitation", "", 1000000);
+    }
     $user = 'u52879';
     $pass = '2750849';
     $conn = new PDO('mysql:host=localhost;dbname=u52879', $user, $pass, [PDO::ATTR_PERSISTENT => true]);
@@ -73,18 +82,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     $sth2->execute(['id'=>"$id"]);
     $result_super = $sth2->fetchAll();
 
-    if(isset($_COOKIE["immortality"])){
-      setcookie("immortality", "", 1000000);
-    }
-    if(isset($_COOKIE["passing_through_walls"])){
-      setcookie("passing_through_walls", "", 1000000);
-    }
-    if(isset($_COOKIE["ok"])){
-      setcookie("levitation", "", 1000000);
-    }
-
-    
     foreach($result_super as $cout){
+      print($cout['id_superpower']);
       if($cout['id_superpower'] =="1"){
         setcookie("immortality","yes");
       }
